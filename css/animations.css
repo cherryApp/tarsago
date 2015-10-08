@@ -1,0 +1,46 @@
+/* Animáció útvonala. */
+@keyframes kartya {
+    0%   {right:-300px; top:150px;}
+    
+    50%  {right:200px; top:150px;}
+    
+    100% {right:200px; top:400px;}
+}
+@keyframes kartyaOut {
+    0%   {right:200px; top:400px;}
+    
+    36%  {right:200px; top:150px;}
+    
+    100% {right:2000px; top:150px;}
+}
+.anim-div {
+    text-align: center;
+    position: fixed;
+    right: -300px;
+    top: 150px;
+    height: 200px;
+    width: 150px;
+    background-color: #f5f6f7;
+    box-shadow: 0 0 5px;
+    /*transition: all 3s ease-out;*/
+}
+.anim-div img {
+    max-width: 90%;
+    margin: 10px auto;
+}
+.anim-div.second {
+    right: 200px;
+    top: 400px;
+    background-color: #f7f8f9;
+    animation-name: kartya;
+    animation-duration: 4s;
+}
+
+.anim-div.done {
+    right: 2000px;
+    top: 150px;
+    background-color: #f7f8f9;
+    animation-name: kartyaOut;
+    animation-duration: 6s;
+}
+

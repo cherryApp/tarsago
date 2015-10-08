@@ -1,0 +1,16 @@
+/* Fejléc */
+.my-h1 {
+    color: blue;   
+}
+
+@media (max-width: 768px) and (min-width: 500px) {
+    .my-h1 {
+        color: red;
+    }    
+}
+
+@media print {
+    .navbar {
+         display: none;
+    }
+}
