@@ -11,3 +11,6 @@ var d = new Date();
 Date.prototype.mysql = function() {
   return this.getFullYear()+"-"+(this.getMonth()+1).toDoubleChar()+"-"+this.getDate().toDoubleChar();
 }
+
+// Css váltása.
+new cssChange( {"link":"#main-css", "select":"select[name='style-select']"} );

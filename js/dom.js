@@ -12,9 +12,9 @@ function changeCssSource( href ) {
 
 
 // A szelekt módosítása esetén mentjük az új kiválasztott stílust.
-document.querySelector( "select[name='style-select']" )
+/* document.querySelector( "select[name='style-select']" )
     .addEventListener( "change", function(e) {
         console.log( e.target.value );
         localStorage.userSettings = e.target.value;
         changeCssSource();
-    });
+    }); */
