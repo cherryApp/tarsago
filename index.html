@@ -3,9 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Tarsago teszt</title>
-        <link rel="stylesheet" href="css/main.css">
+        <link id="main-css" rel="stylesheet" href="css/main.css">
     </head>
     <body>
+       <div class="select-div">
+           <select name="style-select">
+               <option value="css/main.css">default</option>
+               <option value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">bootstrap</option>
+           </select>
+       </div>
         <h1>A Te teméked</h1>
         <h2>A Te teméked</h2>
         <h3>A Te teméked</h3>
@@ -15,8 +21,9 @@
         
         <p>Ide jön valami hosszabb szöveg...</p>
         
-        <div class="mydiv"></div>
+        <div class="mydiv" data-tarsago-id="I'am"></div>
         
         <script src="js/main.js"></script>
+        <script src="js/dom.js"></script>
     </body>
 </html>
