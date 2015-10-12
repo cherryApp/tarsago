@@ -8,6 +8,9 @@ tarsagoApp.controller( "termekController",
         $scope.showingProducts = [];
         $scope.productNum = 9;
         
+        // Osztály beállítása.
+        $scope.ng_class = "col-xs-4";
+        
         // Termékek feldolgozása.
         $scope.preProcess = function( products ) {
             
@@ -29,12 +32,27 @@ tarsagoApp.controller( "termekController",
             return processed.splice( 0, $scope.productNum );
         
         };
+        
+        // Stílus beállítása.
+        $scope.setStyle = function( settings ) {
+             
+            // Oszlopok száma.
+            $scope.ng_class = "col-xs-"+( 12/settings.rowPerProduct );
+            
+            // Termékek száma.
+            $scope.productNum = settings.productNum;
+            if ( !$scope.$$phase ) $scope.$apply();
+            
+        };
     
         // Lekérjük a jsont.
         $http.get( "json/products.json" )
             .success( function(d) {
                 console.log( d );
-                $scope.products = $scope.preProcess( d );
+                
+                $scope.settings = d.settings;
+                $scope.setStyle( d.settings );
+                $scope.products = $scope.preProcess( d.data );
             } )
             .error( function(d) {
                 console.error( "Error: ", d );
