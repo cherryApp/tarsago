@@ -1,0 +1,177 @@
+/*Font Import*/
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+/*Main style*/
+body {
+	background: #8BA0B3;
+	font-size: 16px;
+	font-family: 'PT Sans', sans-serif;
+}
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	background: #F1F1F1;
+	padding: 10px;
+	border-radius: 20px;
+	border:1px solid #FFFFFF;
+}
+header {
+	margin: 0 0 10px 0;
+}
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 200px 50px 0;
+}
+.logo p  {
+	  color: #996633;
+	  font-size: .5em;
+	  text-transform: uppercase;
+	  letter-spacing: 1px;
+}
+.logo p.id {
+	color: #000000;
+	font-weight: 700;
+	font-size: 1.375em;
+	margin-bottom: 10px;
+}
+.logo p.id span {
+	border: 1px solid #996633;
+	color: #993300;
+}
+.mainhero {
+	display: inline-block;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: center;
+	width: 300px;
+}
+.mainhero p {
+	padding: 5px;
+}
+.mainhero .toptag{
+	border-top: 2px solid #000000;
+}
+.mainhero .tag{
+	font-size: 24px;
+	color: #FFFFFF;
+	background: #000000;
+}
+.mainhero .bottomtag{
+	border-bottom: 1px solid #000000;
+}
+.userfield {
+    display: inline-block;
+    width: 280px;
+    padding: 25px 0px;
+    border: 1px solid #868686;
+    background: #E8E8E8;
+    border-radius: 10px;
+    float: right;
+}
+.userfield p {
+	text-align: center;
+}
+
+.productgrid {
+	background:#FFF7E5;
+	border-radius: 10px;
+	padding: 10px;
+}
+.productgrid p {
+	font-size: 1em;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.productgrid p span {
+	font-weight: bold;
+	font-style: italic;
+	color: #990000;
+}
+.productgrid p.title,.productgrid p.price {
+	text-align: right;
+}
+.product {
+	position: relative;
+	background:rgba(200,200,200,.3);
+	border: 1px solid rgba(200,200,200,.3);
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	border-radius: 10px;
+	margin: 2.5px;
+	padding: 10px;
+}
+.product img {
+		position: absolute;
+    margin: -15px -10px;
+    padding: 0;
+}
+.product button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+	width:130px;
+	height: 30px;
+	border: none;
+	background: #FF851B;
+	color: #FFFFFF;
+	text-transform: lowercase;
+	font-size: 1em;
+	border-radius: 5px;
+	float: right;
+}
+.order, .address{
+	width: 300px;
+  display: inline-block;
+}
+.address button {
+	  border: 1px solid #033D79;
+    color: #033D79;
+    text-decoration: underline;
+    background: transparent;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.yesbox {
+	/*width: 500px;*/
+}
+.nobox {
+	/*width: 400px;*/
+}
+.yesbox, .nobox {
+	margin: 0 auto;
+	width: 47%;
+	display: inline-block;
+	font-size:.875em;
+	line-height: 1.375em;
+	background: #DCDCDC;
+	border:1px solid rgba(0,0,0,.2);
+	border-radius: 10px;
+	padding: 10px;
+}
+.yesbox button,.nobox button {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	width: 180px;
+	height: 50px;
+	border-radius:10px;
+	border: 2px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.75em;
+	text-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+
+.yesbox button {
+	background: #FF851B;
+}
+.nobox button {
+	background: #666666;
+}
+
+footer {
+	color: #FFFFFF;
+}
