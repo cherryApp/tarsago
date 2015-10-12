@@ -1,0 +1,55 @@
+[
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 5
+    },
+    {
+        "title": "Product title2",
+        "img": "img/CVP9.png",
+        "price": 2500,
+        "qt": 1
+    },
+    {
+        "title": "Hiányzó termék",
+        "img": "img/GCM9.png",
+        "price": 2500,
+        "qt": 0
+    },
+    {
+        "title": "Product title4",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 10
+    },
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 7
+    },
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 5
+    },
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 5
+    },
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500,
+        "qt": 5
+    },
+    {
+        "title": "Product title",
+        "img": "img/AML9.png",
+        "price": 2500
+    }    
+]
