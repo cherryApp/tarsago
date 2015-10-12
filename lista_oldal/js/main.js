@@ -1,5 +1,5 @@
 // Tarsago modul.
-var tarsagoApp = angular.module( "tarsagoApp", [] );
+var tarsagoApp = angular.module( "tarsagoApp", ["currencyModule"] );
 
 // Termék kontroller.
 tarsagoApp.controller( "termekController",
