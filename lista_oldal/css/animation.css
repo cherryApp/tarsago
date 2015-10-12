@@ -1,0 +1,21 @@
+.product .cancel-btn {
+    display: none;
+}
+
+.animated-product {
+    box-shadow: 0 0 5px;
+    background-color: white;
+}
+
+.cart .cart-item {
+    height: 240px;
+    padding: 10px;
+    border: solid 2px #dadada;
+}
+
+.cart .cart-item .order-btn {
+    display: none;
+}
+.cart .cart-item .cancel-btn {
+    display: block;
+}

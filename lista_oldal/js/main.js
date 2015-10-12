@@ -1,61 +1,60 @@
 // Tarsago modul.
 var tarsagoApp = angular.module( "tarsagoApp", ["currencyModule"] );
 
-// Termék kontroller.
-tarsagoApp.controller( "termekController",
-    ["$scope", "$http", function($scope, $http) {
-        
-        $scope.showingProducts = [];
-        $scope.productNum = 9;
-        
-        // Osztály beállítása.
-        $scope.ng_class = "col-xs-4";
-        
-        // Termékek feldolgozása.
-        $scope.preProcess = function( products ) {
-            
-            // Megkeressük a készelten lévőket.
-            var processed = [];
-            var missing = [];
-            for ( var k in products ) {
-                if ( products[k].qt > 0 ) {
-                    processed.push( products[k] );                    
-                } else {
-                    products[k].missing = true;
-                    missing.push( products[k] );
-                }
-            }
-            
-            // Hozzávesszük azokat amikből nincs elég.
-            processed = processed.concat( missing );
-            
-            return processed.splice( 0, $scope.productNum );
-        
-        };
-        
-        // Stílus beállítása.
-        $scope.setStyle = function( settings ) {
-             
-            // Oszlopok száma.
-            $scope.ng_class = "col-xs-"+( 12/settings.rowPerProduct );
-            
-            // Termékek száma.
-            $scope.productNum = settings.productNum;
-            if ( !$scope.$$phase ) $scope.$apply();
-            
-        };
+// Eltávolítás a kosárból.
+function removeFromCart( btn ) {
     
-        // Lekérjük a jsont.
-        $http.get( "json/products.json" )
-            .success( function(d) {
-                console.log( d );
-                
-                $scope.settings = d.settings;
-                $scope.setStyle( d.settings );
-                $scope.products = $scope.preProcess( d.data );
-            } )
-            .error( function(d) {
-                console.error( "Error: ", d );
-            } );
+    // Termék kiválasztása.
+    var termek = $( btn ).parents( ".animated-product" );
+    var termekOffset = termek.offset();
+    var holder = termek.parent();
+    var id = termek.attr( "id" );
     
-} ] );
+    // Beállítjuk a gyereket a termék pozíciójára és méretére.
+    var body = angular.element( "body" );
+
+    // Megkeressük az első üres helyet a kosárban.
+    var target = $( ".productgrid #"+id ).first();
+    var targetOffset = target.offset();
+
+    // Animáljuk a termék-klónt.
+    termek
+        .css( {
+            "position": "fixed",
+            "top": termekOffset.top-window.scrollY+"px",
+            "left": termekOffset.left+"px"        
+        } )
+        .appendTo( body )
+        .animate({
+            left: targetOffset.left,
+            top: targetOffset.top-window.scrollY
+            }, 1000, function() {
+                target.css( "visibility", "visible" );
+                holder.addClass( "empty" );
+                termek.remove();
+                reorderCart();
+        });
+}
+
+// Kosár átrendezése.
+function reorderCart() {
+    
+    // Kosár.
+    var cart = $( ".cart" );
+    var slots = cart.find( ".cart-item" );
+    var products = cart.find( ".animated-product" );
+    if ( products.length < 1 ) return;
+    
+    for ( var i = 0; i < slots.length; i++ ) {
+        if ( !products[i] ) {
+            $( slots[i] ).addClass( "empty" );
+            return;
+        }
+        var pr = $( products[i] ).detach();
+        $( slots[i] ).append( pr )
+            .removeClass( "empty" );
+    }
+    
+    
+    
+}

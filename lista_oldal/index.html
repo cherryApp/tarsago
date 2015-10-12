@@ -5,6 +5,7 @@
 	<title>Nyereményjáték</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animation.css">
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body>
@@ -13,8 +14,10 @@
 		<!-- Header. -->
         <ng-include src="'templates/header.html'"></ng-include>
         
+	    <ng-include src="'templates/cart.html'"></ng-include>
+	    
 		<div class="productgrid row" data-ng-controller="termekController" 
-            data-ng-include="'templates/productgrid.html'">		
+            data-ng-include="'templates/productgrid.html'">
 		</div>
 		
 		<ng-include src="'templates/address.html'"></ng-include>
@@ -25,10 +28,15 @@
 
 	</div>
 	
+	
+	
 	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="lib/angular/angular.min.js"></script>
 	<script src="lib/cfilter.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/termekController.js"></script>
+	<script src="js/cartController.js"></script>
 </body>
 
 </html>

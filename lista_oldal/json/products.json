@@ -1,13 +1,14 @@
 {
     
     "settings": {
-        "productNum": 6,
-        "rowPerProduct": 2,
+        "productNum": 9,
+        "rowPerProduct": 3,
         "cartPos": "top"
     },
     
     "data": [
         {
+            "popupTitle": "Szuper termék, rendeljen sokat",
             "title": "Product title",
             "img": "img/AML9.png",
             "price": 2500,
