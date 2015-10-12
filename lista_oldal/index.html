@@ -31,12 +31,12 @@
 			<p>A rendeléshez kattintson: 1. a <span>megnézem</span> gombra 2. a <span>megrendelem</span> gombra 3. az <span>IGEN</span> gombra</p>
 		<div class="productgrid row" data-ng-controller="termekController">
 
-			<div class="product col-xs-4" data-ng-repeat="product in products" 
-			data-ng-show="checkProduct(product) && product.showing">
+			<div class="product col-xs-4" data-ng-repeat="product in products">
 				<img data-ng-src="{{ product.img }}">
 				<p class="title">#{{ $index }}, {{ product.title }}</p>
 				<p class="price">{{ product.price }}</p>
 				<button>{{ button_str }}</button>
+				<div class="missing-badge" data-ng-if="product.missing">missing</div>
 			</div>
 			
 		</div>
