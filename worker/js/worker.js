@@ -1,3 +1,5 @@
+importScripts('otherjs.js');
+
 // Kapott üzenetek figyelése.
 onmessage = function (message) {
 
