@@ -1,0 +1,26 @@
+<h3>{{ cim }}</h3>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <form role="form" method="get" action="/" novalidate>
+
+      <form-group data-ng-model="user.name" type="text" data-label="Név" data-name="name">
+      </form-group>
+      <form-group data-ng-model="user.email" type="email" data-label="Email" data-name="email">
+      </form-group>
+      <form-group data-ng-model="user.address" type="text" data-label="Cím" data-name="address">
+      </form-group>
+      <form-group data-ng-model="user.password" type="password" data-label="Jelszó" data-name="password">
+      </form-group>
+
+      <div class="form-group" data-ng-show="mainError" style="color: red">
+        {{ mainError }}
+      </div>
+
+      <div class="form-group">
+        <button type="button" data-ng-click="saveUser()" class="btn btn-primary">Regisztráció</button>
+      </div>
+
+
+    </form>
+  </div>
+</div>

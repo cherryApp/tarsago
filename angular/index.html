@@ -1,0 +1,34 @@
+<!doctype html>
+<html data-ng-app="mymodule">
+
+<head>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-xs-2">
+      <a href="#index">Főoldal</a>
+    </div>
+    <div class="col-xs-2">
+      <a href="#products">Termékek</a>
+    </div>
+    <div class="col-xs-2">
+      <a href="#about">Rólunk</a>
+    </div>
+    <div class="col-xs-2">
+      <a href="#register">Regisztráció</a>
+    </div>
+  </div>
+
+  <div data-ng-view></div>
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="lib/angular-route.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
