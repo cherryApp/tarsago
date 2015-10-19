@@ -6,40 +6,7 @@ worker.onmessage = function (message) {
   console.log("A worker válasza: " + message.data);
 };
 
-worker.postMessage("Hello én vagyok a main");
-
-var d1 = new Date();
-
-var primes = [2],
-  num = 3,
-  sum = 2,
-  ps = 1;
-doit = function () {
-  while (num < 10000000) {
-    prime = true
-    j = 0
-    totest = Math.ceil(Math.sqrt(num))
-    while (totest >= primes[j]) {
-      if (num % primes[j] == 0) {
-        prime = false
-      }
-      j++
-    }
-    if (prime == true) {
-      primes.push(num)
-      sum += num
-      ps++
-    }
-    num += 2
-  }
-}
-doit();
-
-// Óra megállítása.
-var d2 = new Date();
-
-// Eltelt idő.
-console.log("Eltelt idő: " + (d2.getTime() - d1.getTime()));
+worker.postMessage("doit");
 
 // Json lekérése.
 var xhr = new XMLHttpRequest();
