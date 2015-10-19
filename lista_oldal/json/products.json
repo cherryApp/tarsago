@@ -1,11 +1,11 @@
 {
-    
+
     "settings": {
         "productNum": 9,
-        "rowPerProduct": 3,
+        "rowPerProduct": 4,
         "cartPos": "top"
     },
-    
+
     "data": [
         {
             "popupTitle": "Szuper termék, rendeljen sokat",
@@ -24,7 +24,8 @@
             "title": "Hiányzó termék",
             "img": "img/GCM9.png",
             "price": 2500,
-            "qt": 0
+            "qt": 0,
+            "missing": true
         },
         {
             "title": "Product title4",
@@ -60,6 +61,6 @@
             "title": "Product title",
             "img": "img/AML9.png",
             "price": 2500
-        }    
+        }
     ]
 }

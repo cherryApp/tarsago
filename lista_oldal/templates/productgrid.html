@@ -2,40 +2,37 @@
     <div id="product-{{ product.shortcode }}" class="product">
         <img data-ng-src="{{ product.img }}">
         <p class="title">{{ product.title }}</p>
-        <p class="price">{{ product.price | currencyFilter:'RON':'.' }}</p>
-        <button class="btn btn-success order-btn" data-ng-disabled="product.missing" 
-        data-ng-click="showPopup(product)">Megnézem</button>
+        <p class="price">{{ product.price | currencyFilter:'HUF' }}</p>
+        <button class="btn btn-success order-btn" data-ng-disabled="product.missing" data-ng-click="showPopup(product)">Megnézem</button>
         <button class="btn btn-warning cancel-btn" onclick="removeFromCart(this)">
             Mégsem
         </button>
         <div class="missing-badge" data-ng-if="product.missing">
             elfogyott
-        </div>       
+        </div>
     </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
             {{ popup.product.popupTitle }}
         </h4>
-      </div>
-      <div class="modal-body popup-content">
-        <div id="product-{{ popup.product.shortcode }}" 
-            class="product" data-ng-if="popup.product">
-            <img data-ng-src="{{ popup.product.img }}">
-            <p class="title">{{ popup.product.title }}</p>
-            <p class="price">{{ popup.product.price | currencyFilter:'RON':'.' }}</p>
+            </div>
+            <div class="modal-body popup-content">
+                <div id="product-{{ popup.product.shortcode }}" class="product" data-ng-if="popup.product">
+                    <img data-ng-src="{{ popup.product.img }}">
+                    <p class="title">{{ popup.product.title }}</p>
+                    <p class="price">{{ popup.product.price | currencyFilter:'RON':'.' }}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-ng-click="startOrder(popup)">Megrendelem</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" 
-        data-ng-click="startOrder(popup)">Megrendelem</button>
-      </div>
     </div>
-  </div>
 </div>
