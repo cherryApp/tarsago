@@ -1,0 +1,62 @@
+/* Profilkép. */
+
+#profile-img {
+  visibility: hidden;
+  height: 0;
+}
+
+.image-holder img {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px;
+  cursor: pointer;
+}
+
+.image-holder img:hover {
+  box-shadow: 0 0 8px;
+}
+
+.ng-hide-remove {
+  animation: show 0.5s;
+}
+
+.ng-hide-add {
+  animation: hide 0.5s;
+}
+
+.form-group-dir {
+  position: relative;
+}
+
+.form-group-dir .error {
+  position: absolute;
+  bottom: -20px;
+  color: red;
+  font-style: italic;
+}
+
+.form-input-dir {
+  margin-bottom: 20px;
+}
+
+@keyframes show {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}

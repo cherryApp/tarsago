@@ -12,6 +12,15 @@
       <form-group data-ng-model="user.password" type="password" data-label="Jelszó" data-name="password">
       </form-group>
 
+      <div class="form-group">
+        <label for="profile-img">
+          <div class="image-holder">
+            <img src="img/rohamosztag.jpg" alt="">
+          </div>
+        </label>
+        <input id="profile-img" onchange="profilePicked(this)" type="file">
+      </div>
+
       <div class="form-group" data-ng-show="mainError" style="color: red">
         {{ mainError }}
       </div>

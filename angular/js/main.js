@@ -1,5 +1,5 @@
 // Főmodul.
-var mymodule = angular.module("mymodule", ["ngRoute"]);
+var mymodule = angular.module("mymodule", ["ngRoute", "ngAnimate"]);
 
 // Kofig.
 mymodule.config(function ($routeProvider, $locationProvider) {
@@ -43,7 +43,6 @@ mymodule.directive("formGroup", function () {
       "model": "=ngModel"
     },
     link: function (scope, element) {
-      console.log(scope);
       scope.id = scope.id || genId();
       scope.validate = function (el) {
         if (scope.type === "email") {
@@ -138,3 +137,36 @@ mymodule.controller("registerCtrl", function ($scope) {
 
 
 });
+
+// Kép módosítása.
+function profilePicked(el) {
+  var file = el.files[0];
+
+  // Ellenőrizzük a típust.
+  if (file.type.indexOf("image") === -1) {
+    alert("Csak képet tölthet fel!");
+    return;
+  }
+
+  // File tartalmának kiolvasása.
+  var img = document.querySelector(".image-holder img");
+  var reader = new FileReader();
+  reader.onloadend = function () {
+    console.log(reader.result);
+    img.src = reader.result;
+    sendImg(reader.result);
+  }
+  reader.readAsDataURL(file);
+
+
+};
+
+function sendImg(data) {
+  console.log(data);
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function (e) {
+    console.log(e);
+  };
+  xhr.open("post", "http://127.0.0.1:3555");
+  xhr.send(data);
+}
