@@ -51,12 +51,24 @@
     </div>
   </nav>
 
+  <div class="clearfix">&nbsp;</div>
+
   <div class="container">
-    <div class="col-xs-6">
-      <input id="chat-input" class="form-control" type="text">
+    <div class="row">
+      <div class="col-xs-4">
+        <input placeholder="Név" class="form-control" id="client" type="text">
+      </div>
     </div>
-    <div class="col-xs-2">
-      <button onclick="sendChatMessage(this)" class="btn btn-primary">küldés</button>
+    <div class="row">
+      <div class="col-xs-6">
+        <input id="chat-input" class="form-control" type="text">
+      </div>
+      <div class="col-xs-2">
+        <button onclick="sendChatMessage(this)" class="btn btn-primary">küldés</button>
+      </div>
+    </div>
+    <div class="row">
+      <textarea id="show-message" cols="30" rows="10"></textarea>
     </div>
   </div>
 
